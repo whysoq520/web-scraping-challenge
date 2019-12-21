@@ -13,8 +13,7 @@ def init_browser():
 
 def scrape():
     browser = init_browser()
-    return mars_data
-
+    
     # News
     news_url="https://mars.nasa.gov/news/"
     browser.visit(news_url)    
@@ -25,7 +24,7 @@ def scrape():
     news_title = news[0].text.strip()
     #paragraph
     news_p = news_s.find_all("div", class_="rollover_description_inner")[0].text.strip()
-    browser.quit()
+    
     
     #Featured Image
     feature_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
@@ -33,7 +32,7 @@ def scrape():
     time.sleep(4)
     browser.find_by_css("a#full_image.button.fancybox").click()
     featured_image_url=browser.find_by_css("img.fancybox-image")["src"]
-    browser.quit()
+   
 
     #Weather@twitter
     path = "https://twitter.com/marswxreport?lang=en"
