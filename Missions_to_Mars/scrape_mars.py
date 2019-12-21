@@ -31,7 +31,7 @@ def scrape():
     #Featured Image
     feature_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(feature_url)
-    time.sleep(4)
+    time.sleep(2)
     browser.find_by_css("a#full_image.button.fancybox").click()
     featured_image_url=browser.find_by_css("img.fancybox-image")["src"]
     mars_data["featured_image_url"] = featured_image_url
