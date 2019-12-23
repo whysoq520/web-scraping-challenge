@@ -17,32 +17,50 @@
     </div>
     <div class="row">
       <div class="col">
-        <h2>Latest Mars News</h2>
-        <p><h3 class="heading"> news:{{mars.news_title}}</h3></p>
+        <h1>Latest Mars News</h1>
+        <p><h3 class="heading"> {{mars.news_title}}</h3></p>
         <p>{{mars.news_p}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-8">
-        <h2 class="heading" >Featured Mars Image</h2>
+        <h1 class="heading" >Featured Mars Image</h1>
         <img src="{{mars.featured_image_url}}" alt="Featured Image">  
       </div>
       <div class="col-sm-4">        
-          <h3>Current Weather on Mars</h3>
+          <h1>Current Weather on Mars</h1>
+          <hr>
           <p>{{mars.mars_weather}}</p>
           <hr>
-          <br>          
-          <h3>Mars Facts</h3>
-          <p>{{mars.fact_table}}</p>                 
+          <br>
+          <table border="1" class="table-responsive table-hover">
+            <thead class="thead-light">
+             <tr>   
+                <th>Description</th>
+                <th>Value</th>
+             </tr>    
+            </thead>
+            <tbody>
+              {% for fact in mars.fact_table %}
+              <tr>
+                <td>{{fact.Description}}</td>
+                <td>{{fact.Value}}</td>
+              </tr>
+              {% endfor %}     
+            </tbody>   
+          </table>             
       </div>
     </div>
     
     <div class="row">
-      <h3 class="heading">Mars Hemispheres</h3>
+      <h1 class="heading">Mars Hemispheres</h1>
       {% for Hemisphere in mars.hemisphere_image_urls %}
       <div class="col-sm-6">
-        <img src = "{{Hemisphere.img_url}}" alt = {{Hemisphere.title}}>
+        <img src = "{{Hemisphere.img_url}}" alt = {{Hemisphere.title}} height="450" width="450">
+        <hr>
         <footer> {{Hemisphere.title}}</footer>
+        <hr>
+        <hr>
       </div>
       {% endfor %}
     </div>
