@@ -14,11 +14,106 @@ db.destinations.insert({"continent":"North America", "country":"Canada", "major_
 db.destinations.insert({"continent":"North America", "country":"USA","major_cities": ["NY","Washington", "Chicago"]})
 db.destinations.insert({"continent":"Asia", "country":"China", "major_cities": ["Beijing","Shanghai", "Shenzhen"]})
 
+db.<collectionName>.insertMany([{field1: "value1"}, {field1: "value2"}])
 if it successful created: writeresult({nInserted":1})
 
-4.select--use find()/find().pretty() 
+4.select--use find()/find().pretty()/.limit(10)
 db.destinations.find()
+db.destinations.find().pretty()
 db.destinations.find({"continent":"North America"}).pretty()
 db.destinations.find({"country":"China"}).pretty()
+db.<collectionName>.count();
 
 db.destinations.find({"_id" : ObjectId("5ecc31af6c7c0288990fbfb7"}).pretty()
+
+
+5. update({},{$set:{} })
+   updateMany({},{$set:{} })
+   update({},{$set:{}},{upsert:true})(when there is new country/continent. it needs upsert)
+   update({},{$set:{} }) VS update({},{$push:{} }) set will overwrite the value. push will add the new value 
+   
+eg: db.destinations.update ({"continent":"North America"},{$set:{"continent":"South America"} })
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+#to check the update
+db.destinations.find().pretty()
+{
+        "_id" : ObjectId("5ecc30c46c7c0288990fbfb5"),
+        "continent" : "South America",
+        "country" : "Canada",
+        "major_cities" : [
+                "Toronto",
+                "Montreal",
+                "Vancouver"
+        ]
+}
+{
+        "_id" : ObjectId("5ecc31a66c7c0288990fbfb6"),
+        "continent" : "North America",
+        "country" : "USA",
+        "major_cities" : [
+                "NY",
+                "Washington",
+                "Chicago"
+        ]
+}
+{
+        "_id" : ObjectId("5ecc31af6c7c0288990fbfb7"),
+        "continent" : "Asia",
+        "country" : "China",
+        "major_cities" : [
+                "Beijing",
+                "Shanghai",
+                "Shenzhen"
+        ]
+}
+
+db.destinations.update ({"continent":"South America"},{$set:{"continent":"North America"} })
+
+db.destinations.updateMany ({"continent":"North America"},{$set:{"continent":"South America"} })
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+
+
+
+6. remove({"key:value"})/ remove({})
+ eg: db.destinations.remove({"country":"USA"}) percific query
+     WriteResult({ "nRemoved" : 1 })
+ upsert : 
+db.destinations.update({"country":"USA"},{$set:{"major_cities": ["NY","Washington", "Chicago"]}}, {upsert:true})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 1,
+        "nModified" : 0,
+        "_id" : ObjectId("5ecc44e17caad0c16659eb43")
+update continent for usa (using push /set to add new column): 
+db.destinations.update({"country":"USA"},{$push:{"continent":"North America"}})
+db.destinations.update({"country":"Canada"},{$set:{"Capital":"Ottawa"}})
+
+     db.destinations.remove({}) everything
+     WriteResult({ "nRemoved" : 3 })
+ 
+7. drop()
+   dropDatabase()
+
+eg: db.destions.drop()  ---true
+    db.dropDatabase() --{ "dropped" : "travel_db", "ok" : 1 }
+
+8.Administrative Commands
+// Get the collection statistics 
+//
+db.<collectionName>.stats()
+db.printCollectionStats()
+//
+// Latency statistics for read, writes operations including average time taken for reads, writes
+// and related umber of operations performed
+//
+db.<collectionName>.latencyStats()
+//
+// Get collection size for data and indexes
+//
+db.<collectionName>.dataSize() // Size of the collection
+db.<collectionName>.storageSize() // Total size of document stored in the collection
+db.<collectionName>.totalSize() // Total size in bytes for both collection data and indexes
+db.<collectionName>.totalIndexSize() // Total size of all indexes in the collection
+
+https://dzone.com/articles/top-10-most-common-commands-for-beginners
