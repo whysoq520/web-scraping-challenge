@@ -1,0 +1,24 @@
+1. create database /collection(table): 
+use (databasename)
+db.createCollection("collectionname")
+
+
+2. to check databse :
+db
+show dbs(it won't show db without collection in db)
+show collections
+
+
+3. create rows:
+db.destinations.insert({"continent":"North America", "country":"Canada", "major_cities": ["Toronto","Montreal", "Vancouver"]})
+db.destinations.insert({"continent":"North America", "country":"USA","major_cities": ["NY","Washington", "Chicago"]})
+db.destinations.insert({"continent":"Asia", "country":"China", "major_cities": ["Beijing","Shanghai", "Shenzhen"]})
+
+if it successful created: writeresult({nInserted":1})
+
+4.select--use find()/find().pretty() 
+db.destinations.find()
+db.destinations.find({"continent":"North America"}).pretty()
+db.destinations.find({"country":"China"}).pretty()
+
+db.destinations.find({"_id" : ObjectId("5ecc31af6c7c0288990fbfb7"}).pretty()
