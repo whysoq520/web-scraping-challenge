@@ -95,7 +95,7 @@ db.destinations.update({"country":"Canada"},{$set:{"Capital":"Ottawa"}})
 7. drop()
    dropDatabase()
 
-eg: db.destions.drop()  ---true
+eg: db.destinations.drop()  ---true
     db.dropDatabase() --{ "dropped" : "travel_db", "ok" : 1 }
 
 8.Administrative Commands
