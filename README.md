@@ -4,7 +4,7 @@ Welcome to my webscraping project. This is my favorite project. I create two sca
 
 **Installation**
 
-The code was developed using the Anaconda distribution of Python, versions 3.7 Python libraries used are  pandas, datetime, matplotlib, seaborn, sklearn, scipy, statsmodels, random, PIL, requests, collections, and pickle.
+The code was developed using the Anaconda distribution of Python, versions 3.7 Python libraries used are BeautifulSoup, Requests, splinter, time.
 
 Install MongoDB Community Edition on Windows
 In the follow link, follow instruction to download and install MongoDB
