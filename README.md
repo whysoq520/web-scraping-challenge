@@ -1,6 +1,6 @@
 # web-scraping-challenge
 
-Welcome to my webscraping project. This is my favorite project. I create two scatter plots utilizing Javascript and D3 skills plus html : A simple plot of Risk of Healthcare VS Poverty including state abbreviations in the circles; An animated scatter plots of Risk of Healthcare/Smoke VS Poverty/Age including state abbreviations in the circles.
+Welcome to my webscraping project. This is my favorite project. I use requests and Beautiful Soup for scraping and parsing data from the NASA Website to buil my web console(Scrape to Mars). 
 
 **Installation**
 
@@ -22,15 +22,19 @@ https://chromedriver.chromium.org/
 
 1.You'll need to use python -m http.server to run the visualization. This will host the page at localhost:8000 in your web browser. 2. Or via Visual Studio Code Go Live to run the app.js in your web browser. Please note to open folder to active Go Live function. golive.jpg
 
-Built With
+**Built With**
 
-.HTML .CSS .d3
+HTML 
+CSS 
+Javascript
+Flask
+Python
 
-Data Sources
 
-The data set is based on 2014 ACS 1-year estimates: https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml
+**Data Sources**
 
-Results
+
+**Results**
 
 Simple plot of Risk of Healthcare VS Poverty including state abbreviations in the circles
 riskofhealthcarevspoverty.png)
@@ -42,10 +46,12 @@ License
 
 This project is licensed under Self Pracetice code of javascript, D3
 
-Authors
+**Authors**
 
 Shaohua Liu
 
-Acknowledgments
+**Acknowledgments**
 
 instructor:Ahmad G. TAs:Sara H and Sneid
+
+https://realpython.com/beautiful-soup-web-scraper-python/#why-scrape-the-web
