@@ -18,6 +18,14 @@ please check your pc's chrome version and download the right chrome driver.
 The following link can find the right version of ChromeDriver. Please download and place in the same folder of the scrape.py
 https://chromedriver.chromium.org/
 
+Requests library
+
+run the following command in python:
+
+$ pip install requests
+
+
+
 **Deployment**
 
 1.You'll need to use python -m http.server to run the visualization. This will host the page at localhost:8000 in your web browser. 2. Or via Visual Studio Code Go Live to run the app.js in your web browser. Please note to open folder to active Go Live function. golive.jpg
