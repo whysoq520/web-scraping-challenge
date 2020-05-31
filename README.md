@@ -63,3 +63,4 @@ Shaohua Liu
 instructor:Ahmad G. TAs:Sara H and Sneid
 
 https://realpython.com/beautiful-soup-web-scraper-python/#why-scrape-the-web
+https://selenium-python.readthedocs.io/locating-elements.html
