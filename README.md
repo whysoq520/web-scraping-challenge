@@ -1,6 +1,6 @@
 # web-scraping-challenge
 
-Welcome to my webscraping project. This is my favorite project. I use requests and Beautiful Soup for scraping and parsing data from the NASA Website to buil my web console(Scrape to Mars). 
+Welcome to my webscraping project. This is my favorite project. I use requests and Beautiful Soup for scraping and parsing data from the NASA Website and tweet's Mar Weather Webpage to buil my web console(Scrape to Mars). 
 
 **Installation**
 
